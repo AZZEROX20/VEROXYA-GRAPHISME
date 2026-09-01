@@ -1,119 +1,232 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — NEXYRA</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — NEXYRA</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #1a1a1a;
+      background-color: #000000;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #0066ff;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #0066ff;
+    }
+
+    /* Hero Portfolio */
+    .portfolio-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .portfolio-hero h1 {
+      font-size: 42px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .portfolio-hero h1 span {
+      color: #0066ff;
+    }
+    .portfolio-hero p {
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section Portfolio & Instagram Feed */
+    .portfolio-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      border-left: 4px solid #0066ff;
+      padding-left: 12px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+
+    /* Carte Instagram Style */
+    .insta-card {
+      background-color: #121212;
+      border: 1px solid #262626;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .insta-card:hover {
+      transform: translateY(-5px);
+      border-color: #0066ff;
+    }
+
+    .insta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid #1f1f1f;
+    }
+    .insta-user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .insta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #0066ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .insta-username {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .insta-img-wrapper {
+      width: 100%;
+      background-color: #000;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .insta-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .insta-caption {
+      padding: 16px;
+      font-size: 14px;
+    }
+    .insta-caption .tag {
+      color: #0066ff;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .insta-caption p {
+      color: #ccc;
+      margin-bottom: 6px;
+    }
+    .insta-caption .details {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1a1a1a;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <a href="index.html" class="logo">NEXYRA<span>.</span></a>
-        <nav class="nav">
-            <a href="index.html">Accueil</a>
-            <a href="services.html">Services</a>
-            <a href="offres.html">Tarifs</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="a-propos.html">À propos</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <a href="contact.html" class="header-button">Lancer un projet</a>
-    </header>
+  <!-- Navigation -->
+  <header>
+    <a href="index.html" class="logo">NEXYRA<span>.</span></a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- EN-TÊTE DE SECTION -->
-    <section class="section" style="padding-top: 180px; padding-bottom: 50px;">
-        <div class="section-title">
-            <p>NOS RÉALISATIONS</p>
-            <h2>Galerie de <span>Projets</span></h2>
-            <p class="section-description">
-                Un aperçu de nos créations en identités visuelles, branding et graphisme digital.
-            </p>
+  <!-- Hero Portfolio -->
+  <section class="portfolio-hero">
+    <h1>NOS <span>RÉALISATIONS</span></h1>
+    <p>Découvrez nos créations graphiques, visuels réseaux sociaux et identités visuelles.</p>
+  </section>
+
+  <!-- Section Portfolio / Instagram -->
+  <main class="portfolio-container">
+    <h2 class="section-title">Publications Instagram & Visuals</h2>
+    
+    <div class="portfolio-grid">
+
+      <!-- Carte du Match Amical (Affiche) -->
+      <article class="insta-card">
+        <div class="insta-header">
+          <div class="insta-user-info">
+            <div class="insta-avatar">N</div>
+            <span class="insta-username">nexyra.design</span>
+          </div>
         </div>
-    </section>
-
-    <!-- GRILLE PORTFOLIO -->
-    <section class="section" style="padding-top: 0;">
-        <div class="portfolio-grid">
-
-            <!-- PROJET 1 -->
-            <div class="portfolio-item portfolio-large">
-                <div class="portfolio-placeholder">
-                    <span>BRANDING</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Identité Visuelle — Studio K</h3>
-                    <p>Logo, typographie & charte graphique complète</p>
-                </div>
-            </div>
-
-            <!-- PROJET 2 -->
-            <div class="portfolio-item">
-                <div class="portfolio-placeholder placeholder-small">
-                    <span>SOCIAL</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Feed & Templates Instagram</h3>
-                    <p>Direction artistique & kit réseaux sociaux</p>
-                </div>
-            </div>
-
-            <!-- PROJET 3 -->
-            <div class="portfolio-item">
-                <div class="portfolio-placeholder placeholder-small">
-                    <span>ADS</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Campagne Visuelle Web</h3>
-                    <p>Bannières publicitaires haute conversion</p>
-                </div>
-            </div>
-
-            <!-- PROJET 4 -->
-            <div class="portfolio-item">
-                <div class="portfolio-placeholder placeholder-small">
-                    <span>LOGO</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Refonte de Logo — Apex</h3>
-                    <p>Design minimaliste & déclinable</p>
-                </div>
-            </div>
-
-            <!-- PROJET 5 -->
-            <div class="portfolio-item portfolio-large">
-                <div class="portfolio-placeholder">
-                    <span>GRAPHISME</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Univers de Marque — Lumina</h3>
-                    <p>Création d'identité visuelle globale</p>
-                </div>
-            </div>
-
+        <div class="insta-img-wrapper">
+          <!-- Place l'image téléchargée dans le même dossier et nomme-la "affiche-usap.jpg" -->
+          <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy-Pinon vs Crouy Cuffies">
         </div>
-    </section>
-
-    <!-- BANNIÈRE D'APPEL À L'ACTION -->
-    <section class="blue-banner">
-        <div>
-            <p>VOUS AVEZ UN PROJET SIMILAIRE ?</p>
-            <h2>Créons votre <span>identité</span> ensemble</h2>
+        <div class="insta-caption">
+          <span class="tag">#SocialMediaKit #VisualDesign</span>
+          <p><strong>Visuel de Match Amical — US Anizy Pinon</strong></p>
+          <p class="details">Création d'affiche de match pour la préparation des seniors (US Anizy Pinon vs Crouy Cuffies).</p>
         </div>
-        <a href="contact.html" class="dark-button">LANCER UN PROJET</a>
-    </section>
+      </article>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo">NEXYRA<span>.</span></div>
-        <p>© 2026 NEXYRA. Studio de design graphisme & branding.</p>
-        <div class="footer-bottom">
-            <span>Donnez vie à vos idées.</span>
-            <div>
-            </div>
-        </div>
-    </footer>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; NEXYRA. Tous droits réservés.</p>
+  </footer>
 
 </body>
 </html>
