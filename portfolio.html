@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — NEXYRA</title>
+  <title>NEXYRA — Portfolio</title>
   <style>
     /* Reset & Base */
     * {
@@ -15,17 +15,17 @@
       background-color: #0d0d0d;
       color: #ffffff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
-    /* Navigation */
+    /* Navigation Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 8%;
-      border-bottom: 1px solid #1a1a1a;
       background-color: #000000;
+      border-bottom: 1px solid #1a1a1a;
     }
     .logo {
       font-size: 24px;
@@ -48,132 +48,149 @@
       color: #0066ff;
     }
 
-    /* Hero Portfolio */
-    .portfolio-hero {
+    /* Formulaire de Contact Section */
+    .contact-section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
       text-align: center;
-      padding: 60px 20px 40px;
     }
-    .portfolio-hero h1 {
-      font-size: 42px;
+    .subtitle {
+      color: #0066ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-    .portfolio-hero h1 span {
+    .title-banner {
+      font-size: 38px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .title-banner span {
       color: #0066ff;
     }
-    .portfolio-hero p {
+    .intro-text {
       color: #888;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Section Portfolio & Instagram Feed */
-    .portfolio-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 20px 80px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 14px;
       margin-bottom: 30px;
-      border-left: 4px solid #0066ff;
-      padding-left: 12px;
     }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      justify-content: center;
-    }
-
-    /* Carte Instagram Style */
-    .insta-card {
-      background-color: #121212;
-      border: 1px solid #262626;
-      border-radius: 12px;
-      overflow: hidden;
+    .contact-form {
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      gap: 16px;
+      text-align: left;
     }
-    .insta-card:hover {
-      transform: translateY(-5px);
+    .form-row {
+      display: flex;
+      gap: 16px;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      color: #ccc;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: #121212;
+      border: 1px solid #222;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       border-color: #0066ff;
     }
-
-    .insta-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      border-bottom: 1px solid #1f1f1f;
-    }
-    .insta-user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .insta-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
       background-color: #0066ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .insta-username {
-      font-weight: 600;
-      font-size: 14px;
       color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    .btn-submit:hover {
+      background-color: #0052cc;
     }
 
-    .insta-img-wrapper {
+    /* Section Portfolio Instagram */
+    .portfolio-section {
+      max-width: 1000px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+    }
+    .portfolio-title {
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    /* Grille et cartes d'images RÉTRÉCIES */
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+    .portfolio-card {
       width: 100%;
-      background-color: #000;
-      aspect-ratio: 4 / 5;
+      max-width: 250px; /* Taille de la carte fortement réduite */
+      background-color: #121212;
+      border: 1px solid #222;
+      border-radius: 8px;
       overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
     }
-    .insta-img-wrapper img {
+    .portfolio-card:hover {
+      transform: translateY(-4px);
+      border-color: #0066ff;
+    }
+    .portfolio-card img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-    }
-
-    .insta-caption {
-      padding: 16px;
-      font-size: 14px;
-    }
-    .insta-caption .tag {
-      color: #0066ff;
-      font-weight: 600;
-      margin-bottom: 6px;
-      display: block;
-    }
-    .insta-caption p {
-      color: #ccc;
-      margin-bottom: 6px;
-    }
-    .insta-caption .details {
-      color: #777;
-      font-size: 13px;
     }
 
     /* Footer */
     footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #1a1a1a;
-      color: #666;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
       font-size: 14px;
+      color: #888;
+      border-top: 1px solid #1a1a1a;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #888;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
@@ -183,49 +200,88 @@
   <header>
     <a href="index.html" class="logo">NEXYRA<span>.</span></a>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="portfolio.html" class="active">Portfolio</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="#contact">Contact</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
     </nav>
   </header>
 
-  <!-- Hero Portfolio -->
-  <section class="portfolio-hero">
-    <h1>NOS <span>RÉALISATIONS</span></h1>
-    <p>Découvrez nos créations graphiques, visuels réseaux sociaux et identités visuelles.</p>
+  <!-- Section Formulaire -->
+  <section class="contact-section" id="contact">
+    <p class="subtitle">PARLONS DE VOTRE PROJET</p>
+    <h1 class="title-banner">UN PROJET EN <span>TÊTE ?</span></h1>
+    <p class="intro-text">
+      Remplissez le formulaire ci-dessous ou écrivez-nous directement.<br>
+      Nous vous répondons sous 24 à 48 heures.
+    </p>
+
+    <form class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>NOM / PRÉNOM *</label>
+          <input type="text" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label>ADRESSE E-MAIL *</label>
+          <input type="email" placeholder="john@exemple.com" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>TYPE DE PROJET *</label>
+          <select required>
+            <option value="" disabled selected>Sélectionnez un besoin</option>
+            <option value="graphisme">Design Graphique</option>
+            <option value="site">Site Web</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>BUDGET ESTIMÉ</label>
+          <select>
+            <option value="" disabled selected>Sélectionnez une tranche</option>
+            <option value="small">< 500 €</option>
+            <option value="medium">500 € - 1500 €</option>
+            <option value="large">> 1500 €</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>MESSAGE / DÉTAILS DU PROJET *</label>
+        <textarea rows="5" placeholder="Décrivez votre projet, vos objectifs et vos délais..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
+    </form>
   </section>
 
-  <!-- Section Portfolio / Instagram -->
-  <main class="portfolio-container">
-    <h2 class="section-title">Publications Instagram & Visuals</h2>
-    
+  <!-- Section Portfolio Instagram -->
+  <section class="portfolio-section">
+    <h2 class="portfolio-title">PORTFOLIO INSTAGRAM</h2>
     <div class="portfolio-grid">
+      
+      <!-- Carte Réduite 1 -->
+      <div class="portfolio-card">
+        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
+      </div>
 
-      <!-- Carte du Match Amical (Affiche) -->
-      <article class="insta-card">
-        <div class="insta-header">
-          <div class="insta-user-info">
-            <div class="insta-avatar">N</div>
-            <span class="insta-username">nexyra.design</span>
-          </div>
-        </div>
-        <div class="insta-img-wrapper">
-          <!-- Place l'image téléchargée dans le même dossier et nomme-la "affiche-usap.jpg" -->
-          <img src="affiche-usap dimanche-16-août.png" alt="Affiche Match Amical US Anizy-Pinon vs Crouy Cuffies">
-        </div>
-        <div class="insta-caption">
-          <span class="tag">#SocialMediaKit #VisualDesign</span>
-          <p><strong>Visuel de Match Amical — US Anizy Pinon</strong></p>
-          <p class="details">Création d'affiche de match pour la préparation des seniors (US Anizy Pinon vs Crouy Cuffies).</p>
-        </div>
-      </article>
+      <!-- Carte Réduite 2 -->
+      <div class="portfolio-card">
+        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
+      </div>
+
+      <!-- Carte Réduite 3 -->
+      <div class="portfolio-card">
+        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
+      </div>
 
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; NEXYRA. Tous droits réservés.</p>
+    <a href="mailto:contact@nexyra.com">contact@nexyra.com</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
   </footer>
 
 </body>
