@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — NEXYRA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques au formulaire de contact */
+        .contact-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.25s, outline 0.25s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        select.form-control option {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        @media (max-width: 650px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo">NEXYRA<span>.</span></a>
+        <nav class="nav">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="offres.html">Tarifs</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="contact.html" class="header-button">Lancer un projet</a>
+    </header>
+
+    <!-- SECTION CONTACT -->
+    <section class="contact" style="padding-top: 180px;">
+        <p class="contact-label">PARLONS DE VOTRE PROJET</p>
+        <h2>UN PROJET EN <span>TÊTE</span> ?</h2>
+        <p>Remplissez le formulaire ci-dessous ou écrivez-nous directement. Nous vous répondons sous 24 à 48 heures.</p>
+
+        <!-- FORMULAIRE -->
+        <div class="contact-form-container">
+            <form class="contact-form" action="#" method="POST">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom / Prénom *</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse E-mail *</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="john@exemple.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-type">Type de projet *</label>
+                        <select id="project-type" name="project-type" class="form-control" required>
+                            <option value="" disabled selected>Sélectionnez un besoin</option>
+                            <option value="logo">Pack Logo / Branding</option>
+                            <option value="identity">Identité Visuelle Complète</option>
+                            <option value="social">Graphisme Web & Social (Templates, Ads)</option>
+                            <option value="custom">Autre besoin sur-mesure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget estimé</label>
+                        <select id="budget" name="budget" class="form-control">
+                            <option value="" disabled selected>Sélectionnez une tranche</option>
+                            <option value="300-500">300€ — 500€</option>
+                            <option value="500-1000">500€ — 1 000€</option>
+                            <option value="1000+">Plus de 1 000€</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Détails du projet *</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Décrivez votre projet, vos objectifs et vos délais..." required></textarea>
+                </div>
+
+                <button type="submit" class="contact-button" style="border: none; cursor: pointer; width: 100%;">ENVOYER LE MESSAGE</button>
+
+            </form>
+        </div>
+
+        <!-- LIENS ET INFOS DE CONTACT -->
+        <div class="contact-links">
+            <a href="mailto:azzerroxx@outlook.fr">contact@nexyra.com</a>
+            <a href="#">Instagram</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">NEXYRA<span>.</span></div>
+        <p>© 2026 NEXYRA. Studio de design graphisme & branding.</p>
+        <div class="footer-bottom">
+            <span>Donnez vie à vos idées.</span>
+            <div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
