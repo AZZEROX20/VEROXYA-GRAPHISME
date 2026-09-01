@@ -5,152 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEXYRA</title>
   <style>
-    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    body {
-      background-color: #050505;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    /* Navigation */
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 40px 20px;
+    }
+
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 8%;
-      background-color: #050505;
+      max-width: 1000px;
+      margin: 0 auto 60px;
     }
+
     .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: #fff;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #ffffff;
       text-decoration: none;
     }
+
     .logo span {
       color: #0066ff;
     }
-    nav {
-      display: flex;
-      gap: 24px;
-    }
-    nav a {
-      color: #888;
+
+    .nav-links a {
+      color: #888888;
       text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s ease;
-    }
-    nav a:hover {
-      color: #fff;
+      margin-left: 20px;
+      font-size: 15px;
     }
 
-    /* Section Contact */
-    .contact-section {
-      max-width: 650px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* Section Formulaire */
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
       text-align: center;
     }
+
     .subtitle {
       color: #0066ff;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
-    .title-banner {
-      font-size: 48px;
+
+    .title {
+      font-size: 56px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.1;
-      margin-bottom: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
     }
-    .title-banner span {
+
+    .title span {
       color: #0066ff;
     }
-    .intro-text {
-      color: #888;
-      font-size: 14px;
+
+    .description {
+      color: #a0a0a0;
+      font-size: 15px;
+      line-height: 1.6;
       margin-bottom: 40px;
     }
 
     /* Formulaire */
-    .contact-form {
+    form {
       display: flex;
       flex-direction: column;
       gap: 20px;
       text-align: left;
     }
+
     .form-row {
-      display: flex;
-      gap: 16px;
-    }
-    .form-group {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .form-group label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      background-color: #0d0d0d;
-      border: 1px solid #1a1a1a;
-      border-radius: 2px;
-      color: #fff;
-      font-size: 13px;
-      outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: #0066ff;
-    }
-    .btn-submit {
-      width: 100%;
-      padding: 16px;
-      background-color: #0066ff;
-      color: #fff;
-      border: none;
-      border-radius: 2px;
-      font-weight: 700;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background-color 0.2s;
-    }
-    .btn-submit:hover {
-      background-color: #0052cc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    /* Section Portfolio */
-    .portfolio-section {
-      max-width: 1100px;
-      margin: 80px auto 40px;
-      padding: 0 20px;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-    .portfolio-title {
-      font-size: 28px;
+
+    label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background-color: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 4px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #444444;
+    }
+
+    select {
+      color: #888888;
+      appearance: none;
+    }
+
+    .btn-submit {
+      background-color: #0066ff;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 16px;
+      font-size: 13px;
       font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* Section Portfolio Instagram */
+    .portfolio-section {
+      max-width: 1000px;
+      margin: 80px auto 40px;
+      text-align: left;
+    }
+
+    .portfolio-title {
+      font-size: 24px;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 30px;
-      text-align: left;
+      margin-bottom: 20px;
     }
 
     .portfolio-grid {
@@ -158,16 +167,12 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-    .portfolio-item {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .portfolio-item img {
+
+    .portfolio-grid img {
       width: 100%;
       height: auto;
-      display: block;
       border-radius: 8px;
+      display: block;
     }
 
     /* Footer */
@@ -175,110 +180,86 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      padding: 40px 20px;
-      font-size: 13px;
-      color: #888;
       margin-top: 60px;
     }
+
     footer a {
-      color: #888;
+      color: #666666;
       text-decoration: none;
-    }
-    footer a:hover {
-      color: #fff;
+      font-size: 14px;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .form-row {
-        flex-direction: column;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+    footer a:hover {
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Header -->
   <header>
-    <a href="#" class="logo">NEXYRA<span>.</span></a>
-    <nav>
+    <a href="index.html" class="logo">NEXYRA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
       <a href="#contact">Contact</a>
       <a href="https://instagram.com" target="_blank">Instagram</a>
-    </nav>
+    </div>
   </header>
 
-  <!-- Section Formulaire de Contact -->
-  <section class="contact-section" id="contact">
-    <p class="subtitle">PARLONS DE VOTRE PROJET</p>
-    <h1 class="title-banner">UN PROJET EN <span>TÊTE ?</span></h1>
-    <p class="intro-text">
+  <!-- Section Formulaire -->
+  <div class="container" id="contact">
+    <div class="subtitle">PARLONS DE VOTRE PROJET</div>
+    <h1 class="title">UN PROJET EN <span>TÊTE ?</span></h1>
+    <p class="description">
       Remplissez le formulaire ci-dessous ou écrivez-nous directement.<br>
       Nous vous répondons sous 24 à 48 heures.
     </p>
 
-    <form class="contact-form">
+    <form>
       <div class="form-row">
         <div class="form-group">
           <label>NOM / PRÉNOM *</label>
-          <input type="text" placeholder="John Doe" required>
+          <input type="text" placeholder="John Doe">
         </div>
         <div class="form-group">
           <label>ADRESSE E-MAIL *</label>
-          <input type="email" placeholder="john@exemple.com" required>
+          <input type="email" placeholder="john@exemple.com">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>TYPE DE PROJET *</label>
-          <select required>
-            <option value="" disabled selected>Sélectionnez un besoin</option>
-            <option value="graphisme">Design Graphique</option>
-            <option value="site">Site Web</option>
+          <select>
+            <option>Sélectionnez un besoin</option>
           </select>
         </div>
         <div class="form-group">
           <label>BUDGET ESTIMÉ</label>
           <select>
-            <option value="" disabled selected>Sélectionnez une tranche</option>
-            <option value="small">&lt; 500 €</option>
-            <option value="medium">500 € - 1500 €</option>
-            <option value="large">&gt; 1500 €</option>
+            <option>Sélectionnez une tranche</option>
           </select>
         </div>
       </div>
 
       <div class="form-group">
         <label>MESSAGE / DÉTAILS DU PROJET *</label>
-        <textarea rows="5" placeholder="Décrivez votre projet, vos objectifs et vos délais..." required></textarea>
+        <textarea rows="4" placeholder="Décrivez votre projet, vos objectifs et vos délais..."></textarea>
       </div>
 
       <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
     </form>
-  </section>
+  </div>
 
   <!-- Section Portfolio Instagram -->
-  <section class="portfolio-section">
+  <div class="portfolio-section">
     <h2 class="portfolio-title">PORTFOLIO INSTAGRAM</h2>
     <div class="portfolio-grid">
-      
-      <div class="portfolio-item">
-        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
-      </div>
-
-      <div class="portfolio-item">
-        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
-      </div>
-
-      <div class="portfolio-item">
-        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
-      </div>
-
+      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
+      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
+      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
     </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
