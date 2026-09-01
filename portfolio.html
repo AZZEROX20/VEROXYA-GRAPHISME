@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEXYRA</title>
+  <title>NEXYRA — Portfolio</title>
   <style>
+    /* Reset & Styles de base */
     * {
       margin: 0;
       padding: 0;
@@ -18,12 +19,12 @@
       padding: 40px 20px;
     }
 
-    /* Header */
+    /* En-tête / Navigation */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto 60px;
     }
 
@@ -42,15 +43,16 @@
     .nav-links a {
       color: #888888;
       text-decoration: none;
-      margin-left: 20px;
+      margin-left: 24px;
       font-size: 15px;
+      transition: color 0.2s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover, .nav-links a.active {
       color: #ffffff;
     }
 
-    /* Section Formulaire */
+    /* Section Formulaire Contact */
     .container {
       max-width: 700px;
       margin: 0 auto;
@@ -85,7 +87,6 @@
       margin-bottom: 40px;
     }
 
-    /* Formulaire */
     form {
       display: flex;
       flex-direction: column;
@@ -145,34 +146,66 @@
       text-transform: uppercase;
       cursor: pointer;
       margin-top: 10px;
+      transition: background-color 0.2s;
     }
 
-    /* Section Portfolio Instagram */
+    .btn-submit:hover {
+      background-color: #0052cc;
+    }
+
+    /* Section Portfolio standard */
     .portfolio-section {
-      max-width: 1000px;
-      margin: 80px auto 40px;
+      max-width: 1100px;
+      margin: 100px auto 40px;
       text-align: left;
     }
 
     .portfolio-title {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .portfolio-grid img {
+    .portfolio-item {
+      background-color: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      border-color: #0066ff;
+    }
+
+    .portfolio-item img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
       display: block;
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-info p {
+      color: #888888;
+      font-size: 14px;
     }
 
     /* Footer */
@@ -180,7 +213,9 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      margin-top: 60px;
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #1a1a1a;
     }
 
     footer a {
@@ -192,17 +227,23 @@
     footer a:hover {
       color: #ffffff;
     }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Navigation -->
   <header>
     <a href="index.html" class="logo">NEXYRA<span>.</span></a>
     <div class="nav-links">
       <a href="index.html">Accueil</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
       <a href="#contact">Contact</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
     </div>
   </header>
 
@@ -219,45 +260,57 @@
       <div class="form-row">
         <div class="form-group">
           <label>NOM / PRÉNOM *</label>
-          <input type="text" placeholder="John Doe">
+          <input type="text" placeholder="John Doe" required>
         </div>
         <div class="form-group">
           <label>ADRESSE E-MAIL *</label>
-          <input type="email" placeholder="john@exemple.com">
+          <input type="email" placeholder="john@exemple.com" required>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>TYPE DE PROJET *</label>
-          <select>
-            <option>Sélectionnez un besoin</option>
+          <select required>
+            <option value="" disabled selected>Sélectionnez un besoin</option>
+            <option value="graphisme">Design Graphique</option>
+            <option value="web">Site Web</option>
           </select>
         </div>
         <div class="form-group">
           <label>BUDGET ESTIMÉ</label>
           <select>
-            <option>Sélectionnez une tranche</option>
+            <option value="" disabled selected>Sélectionnez une tranche</option>
+            <option value="small">&lt; 500 €</option>
+            <option value="medium">500 € - 1500 €</option>
+            <option value="large">&gt; 1500 €</option>
           </select>
         </div>
       </div>
 
       <div class="form-group">
         <label>MESSAGE / DÉTAILS DU PROJET *</label>
-        <textarea rows="4" placeholder="Décrivez votre projet, vos objectifs et vos délais..."></textarea>
+        <textarea rows="4" placeholder="Décrivez votre projet, vos objectifs et vos délais..." required></textarea>
       </div>
 
       <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
     </form>
   </div>
 
-  <!-- Section Portfolio Instagram -->
+  <!-- Section Portfolio Projets -->
   <div class="portfolio-section">
-    <h2 class="portfolio-title">PORTFOLIO INSTAGRAM</h2>
+    <h2 class="portfolio-title">NOS RÉALISATIONS</h2>
     <div class="portfolio-grid">
-      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
-      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
-      <img src="affiche-usap.jpg" alt="Affiche Match Amical">
+      
+      <!-- Projet 1 : Affiche du Match -->
+      <div class="portfolio-item">
+        <img src="affiche-usap.jpg" alt="Affiche Match Amical US Anizy Pinon">
+        <div class="portfolio-info">
+          <h3>Affiche Match Amical</h3>
+          <p>US Anizy-Pinon vs Crouy Cuffies</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
